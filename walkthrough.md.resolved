@@ -1,0 +1,52 @@
+# Accessibility Checker — Enhanced with Gemini AI
+
+## What Was Built
+
+Created [accessibility_checker.py](file:///C:/Users/jithin.charls/Downloads/accessibility_checker.py) — a standalone Python file replacing the notebook, with these enhancements:
+
+### 1. Google Gemini AI Integration
+- **API key input** (password-masked) in the Settings tab
+- When provided, Gemini analyzes the full document text for deep accessibility insights
+- Without a key, all rule-based checks still work normally
+
+### 2. AI Analysis Covers
+- Content & language clarity beyond simple readability scores
+- Heading structure and hierarchy validation
+- RISE course-specific patterns (interactive blocks, knowledge checks, multimedia)
+- WCAG 2.2 compliance with specific criterion references (e.g., 1.1.1, 2.4.2)
+- Top 5 prioritized, actionable recommendations
+
+### 3. RISE Course-Specific Checks (4 new items)
+- Interactive block labels (accordions, tabs, flashcards)
+- Knowledge check accessibility
+- Multimedia text alternatives
+- Logical course navigation
+
+### 4. Premium Dark-Theme UI
+- 5-tab layout: Upload & Settings → Auto Results → Manual Checklist → AI Analysis → Final Report
+- Glassmorphism cards with purple gradient accents
+- Inter font, smooth hover animations, styled tables
+
+## How to Run
+
+```bash
+# 1. Install dependencies (if not already installed)
+pip install gradio PyPDF2 google-generativeai
+
+# 2. Run the app
+python accessibility_checker.py
+```
+
+Then open `http://127.0.0.1:7860` in your browser.
+
+### Or from Jupyter
+```python
+%run accessibility_checker.py
+```
+
+## UI Flow
+1. **Upload & Settings** — Upload PDF + optionally enter Gemini API key
+2. **Auto Results** — View rule-based WCAG checks with score table
+3. **Manual Checklist** — Tick items you've personally verified
+4. **AI Analysis** — Run Gemini deep analysis (requires API key)
+5. **Final Report** — Combined score with all confirmations
